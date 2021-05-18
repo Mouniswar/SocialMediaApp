@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 import {Field, reduxForm } from 'redux-form';
 import { loginUser } from '../actions/index';
 
@@ -11,9 +10,6 @@ class Login extends Component {
     }
 
     render() {
-        const { error, handleSubmit, pristine, reset, submitting } = this.props;
-       
-
         return (
             <form 
                 className="ui form" style={{width:'50%', height:'auto',margin:'0px auto'}}

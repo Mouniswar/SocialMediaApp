@@ -1,5 +1,5 @@
 let INITIAL_STATE = {
-    friends:null
+    friends:[]
 }
 
 const friendsReducer = (state = INITIAL_STATE, action) => {

@@ -16,7 +16,7 @@ class Header extends Component {
             return (
                 <React.Fragment>
                     <Link to="/profile" className="item">Edit Profile</Link>
-                    <button className="ui button secondary" onClick={this.onLogoutClick}>Sign Out</button>
+                    <Link to="/" className="ui button secondary" onClick={() => this.onLogoutClick()}>Sign Out</Link>
                 </React.Fragment>
             )
         } else if(!localStorage.getItem("token")) {

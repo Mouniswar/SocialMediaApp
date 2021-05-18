@@ -15,6 +15,7 @@ export const createUser = (formValues) => {
 }
 
 export const loginUser = (formValues) => {
+    console.log("Action creator called");
     return async(dispatch) => {
         const res = await axios.post('/users/login', {...formValues});
         console.log(res);
@@ -45,13 +46,14 @@ export const fetchUser = () => {
 
 export const logoutUser = () => {
     return async(dispatch) => {
-        console.log(localStorage.getItem("token"))
+        console.log(localStorage.removeItem("token"))
         const res = await axios.post('http://localhost:8000/users/logoutAll', {
             headers: {
                 Authorization: localStorage.getItem("token")
             }
 
         })
+        console.log(res.data)
 
         dispatch({type: 'DELETE_USER', payload: res.data});
     }
@@ -64,6 +66,7 @@ export const fetchFriends = () => {
                 Authorization: localStorage.getItem("token")
             }
         });
+
 
         dispatch({type: 'FETCH_FRIENDS', payload: res.data});
     }
